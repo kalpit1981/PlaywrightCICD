@@ -19,4 +19,4 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Run your tests
-        run: npx playwright test tests/container.spec.ts
+        run: npx playwright test tests
