@@ -12,6 +12,7 @@ trace.zip
 *.trace
 *.har
 *.zip
+state.json
 
 # Logs
 logs/
