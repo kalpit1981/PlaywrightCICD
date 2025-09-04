@@ -1,9 +1,16 @@
 import { defineConfig, devices } from '@playwright/test';
+import * as dotenv from 'dotenv';
 
 /**
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
+dotenv.config(
+  {
+    path: process.env.Env_Name ? `./env-files/.env.${process.env.Env_Name}` : `./env-files/.env.test`,
+  }
+);
+
 // import dotenv from 'dotenv';
 // import path from 'path';
 // dotenv.config({ path: path.resolve(__dirname, '.env') });
@@ -37,8 +44,16 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
+      name: 'Setup',
+      testMatch: 'global.setup.ts',
+    },
+    
+    {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      dependencies: ['Setup'],
+      use: { ...devices['Desktop Chrome'],
+        storageState: 'state.json'
+      },
     },
 
   /*  {
