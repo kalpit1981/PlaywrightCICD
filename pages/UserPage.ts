@@ -15,7 +15,9 @@ export class UserPage {
 
   async logoutOrangeHRM() 
   {
+    await this.userMenuButton.waitFor({ state: 'visible', timeout: 5000 });
     await this.userMenuButton.click();
+    await this.logoutButton.waitFor({ state: 'visible', timeout: 5000 });
     await this.logoutButton.click();
   }
 }
