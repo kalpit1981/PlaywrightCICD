@@ -11,27 +11,12 @@ jobs:
     container:
       image: mcr.microsoft.com/playwright:v1.54.0-noble
       options: --user 1001
-    env:
-      Env_Name: demo
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      
       - name: Install dependencies
         run: npm ci
-      
-      - name: Copy env file
-        run: |
-          mkdir -p env-files
-          cp env-files/.env.demo env-files/.env.test
-      
       - name: Run your tests
         run: npm run test_demo_cr_hl
-        env:
-          baseUrl: https://opensource-demo.orangehrmlive.com
-          validUser: Admin
-          validPassword: admin123
-          invalidUser: testUser
-          invalidPassword: test123
