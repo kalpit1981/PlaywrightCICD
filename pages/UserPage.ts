@@ -8,7 +8,7 @@ export class UserPage {
 
   constructor(page: Page) {
     this.page = page;
-    this.userMenuButton = page.locator('.oxd-userdropdown-img');
+    this.userMenuButton = page.locator('.oxd-userdropdown-tab');
     this.logoutButton = page.locator('//a[normalize-space()="Logout"]');
 
   }
