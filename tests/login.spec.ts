@@ -23,10 +23,6 @@ test('should login with valid credentials', async ({ page,loginPage }) => {
 
   });
 
-// test('should not login with invalid credentials', async ({ loginPage }) => {
-//     console.log(`Logging in with invalid user: ${process.env.invalidUser!}`);
-//     console.log(`Logging in with invalid password: ${process.env.invalidPassword!}`);
 
-//   });
 
 });
