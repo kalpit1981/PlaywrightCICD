@@ -11,8 +11,8 @@ test.beforeEach('Before Each Hook',async ({ loginPage }) => {
   });
 
 test('should login with valid credentials', async ({ page,loginPage }) => {
-    console.log(`Logging in with user: ${process.env.validUser!}`);
-    console.log(`Logging in with password: ${process.env.validPassword!}`);
+    console.log(`Logging in with user: ${process.env.VALID_USER!}`);
+    console.log(`Logging in with password: ${process.env.VALID_PASSWORD!}`);
     console.log(await page.title());
 
   });
