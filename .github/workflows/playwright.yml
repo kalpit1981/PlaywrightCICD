@@ -8,6 +8,10 @@ jobs:
   playwright:
     name: 'Playwright Tests'
     runs-on: ubuntu-latest
+    env:
+      BASE_URL: ${{ secrets.BASE_URL }}
+      VALID_USER: ${{ secrets.VALID_USER }}
+      VALID_PASSWORD: ${{ secrets.VALID_PASSWORD }}
     container:
       image: mcr.microsoft.com/playwright:v1.54.0-noble
       options: --user 1001
@@ -20,7 +24,4 @@ jobs:
         run: npm ci
       - name: Run your tests
         run: npm run test_demo_cr_hl
-        env:
-          baseUrl: https://opensource-demo.orangehrmlive.com
-          validUser: Admin
-          validPassword: admin123
+        

@@ -20,7 +20,7 @@ export class LoginPage {
     // Method to navigate to the login page
     async gotoOrangeHRM() 
     {
-      await this.page.goto(`${process.env.baseUrl}/web/index.php/auth/login`);
+      await this.page.goto(`${process.env.BASE_URL}/web/index.php/auth/login`);
     }
   // Method to log in
   async loginOrangeHRM(userName: string, password: string) 
